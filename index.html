@@ -333,6 +333,7 @@
       content:''; position:absolute; inset:0;
       background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(124,109,250,0.06), transparent 40%);
       opacity:0; transition:opacity 0.3s;
+      pointer-events: none;
     }
     .project-card:hover::before { opacity:1; }
     .project-card:hover { border-color:rgba(124,109,250,0.35); transform:translateY(-4px); box-shadow:0 20px 60px rgba(0,0,0,0.4); }
@@ -367,6 +368,7 @@
       font-size:0.8rem; font-weight:500;
       transition: color 0.2s;
       padding:6px 14px; border:1px solid var(--border); border-radius:100px;
+      position: relative; z-index: 2;
     }
     .project-link:hover { color:var(--accent); border-color:var(--accent); }
 
