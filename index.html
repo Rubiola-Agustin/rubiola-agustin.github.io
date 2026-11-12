@@ -516,61 +516,41 @@
     <article class="proj flag ru">
       <div class="proj-idx">01</div>
       <div>
-        <h3 class="proj-title">NutriApp<span class="proj-flag">Proyecto principal</span></h3>
-        <dl class="proj-case">
+        <h3 class="proj-title">NutriApp<span class="proj-flag">Proyecto estrella</span></h3>
+        <p class="proj-desc">Plataforma SaaS multi-inquilino para nutricionistas y sus pacientes, en producción en dominio propio. Agenda, fichas clínicas, planes, análisis de comidas por foto con IA y seguimiento de bioimpedancia, con una app para la nutri y otra para el paciente, pensadas primero para el celular. Cada profesional opera con sus datos aislados del resto.</p>
+        <div class="proj-detail">
           <div>
-            <dt>Problema</dt>
-            <dd>Los nutricionistas llevan agenda, fichas clínicas y seguimiento repartidos entre planillas, WhatsApp y papel. Además, saber qué come el paciente depende de que lo anote a mano.</dd>
+            <h4>Responsabilidades</h4>
+            <ul>
+              <li>Arquitectura full-stack y modelo de datos multi-tenant con RLS</li>
+              <li>IA vía Edge Functions: análisis de comidas y de bioimpedancia</li>
+              <li>Notificaciones en tiempo real, push en el celular y recordatorios programados (pg_cron)</li>
+              <li>Rediseño completo mobile-first, instalable como app (PWA)</li>
+              <li>Auth completa: invitaciones, Google, recuperación por mail con dominio y SMTP propios</li>
+              <li>Panel de administración con registro de auditoría</li>
+            </ul>
           </div>
           <div>
-            <dt>Solución</dt>
-            <dd>Plataforma web multi-inquilino para nutricionistas y sus pacientes: agenda, fichas clínicas, seguimiento de bioimpedancia y análisis de comidas por foto con IA. Cada profesional trabaja con sus datos aislados del resto.</dd>
+            <h4>Desafíos</h4>
+            <ul>
+              <li>Aislamiento de datos entre inquilinos y permisos por columna en Postgres</li>
+              <li>Funciones seguras del lado del servidor en vez de permisos al cliente</li>
+              <li>Accesibilidad: contraste, áreas táctiles, movimiento reducido</li>
+              <li>Pruebas automatizadas con un simulador de la app (Playwright)</li>
+              <li>UX distinta para nutricionista y paciente</li>
+            </ul>
           </div>
-        </dl>
-        <div class="proj-block">
-          <h4>Detalle técnico</h4>
-          <ul class="cols">
-            <li>Multi-tenant con RLS en Postgres: el aislamiento entre profesionales se resuelve en la base de datos, no en el frontend.</li>
-            <li>Claude API (Sonnet 4.6) invocada desde Edge Functions en Deno, sin SDK: la API key nunca llega al navegador.</li>
-            <li>pg_cron para recordatorios automáticos de turnos, con control para no duplicar envíos.</li>
-            <li>Realtime para notificaciones dentro de la app y Web Push para avisos en el celular, probado en Android e iOS.</li>
-            <li>Supabase Auth y Storage; paneles separados para nutricionista y paciente.</li>
-          </ul>
         </div>
-        <section class="ai-case" aria-labelledby="ai-case-title">
-          <h4 id="ai-case-title">IA aplicada · cómo funciona</h4>
-          <div class="ai-flows">
-            <div>
-              <h5>Fotos de comidas</h5>
-              <ol>
-                <li>La foto se comprime en el cliente antes de subirla.</li>
-                <li>Claude devuelve en JSON los alimentos detectados, calorías aproximadas, proteínas, carbohidratos y grasas, más una devolución de 2 o 3 oraciones.</li>
-                <li>La respuesta se valida a mano: forma, tipo de cada campo y números finitos. Las claves de más se descartan.</li>
-                <li>Si la respuesta es inválida o la API falla, la comida queda guardada sin análisis.</li>
-                <li>El servidor limita los intentos por comida y las comidas analizadas por día.</li>
-              </ol>
-            </div>
-            <div>
-              <h5>Estudios de bioimpedancia</h5>
-              <ol>
-                <li>La nutricionista sube una foto o un PDF del informe del equipo.</li>
-                <li>La IA extrae 23 valores numéricos, más fecha y sexo.</li>
-                <li>Una segunda llamada genera dos resúmenes: uno técnico para la nutricionista y otro motivador para el paciente.</li>
-                <li>La nutricionista revisa y edita todo en un formulario. Nada se guarda hasta que confirma, y el paciente solo ve mediciones confirmadas.</li>
-              </ol>
-            </div>
-          </div>
-          <p class="ai-note">En la interfaz, el análisis automático tiene un color propio y el rótulo «Análisis automático (apoyo, no reemplaza tu criterio)», para distinguirlo de lo que carga la profesional.</p>
-        </section>
         <div class="proj-tech">
-          <span class="chip key">React 19</span><span class="chip key">Supabase</span>
-          <span class="chip">Vite</span><span class="chip">PostgreSQL · RLS</span>
-          <span class="chip">Edge Functions · Deno</span><span class="chip key">Claude API</span>
-          <span class="chip">pg_cron</span><span class="chip">Realtime</span><span class="chip">Web Push</span>
+          <span class="chip key">React</span><span class="chip">Vite</span>
+          <span class="chip key">Supabase</span><span class="chip">PostgreSQL</span>
+          <span class="chip">Deno</span><span class="chip">Claude API</span>
+          <span class="chip">PWA · Web Push</span><span class="chip">Playwright</span>
         </div>
       </div>
       <div class="proj-side">
-        <span class="proj-link muted">En desarrollo</span>
+        <a class="proj-link" href="https://app.minutriapp.com.ar" target="_blank" rel="noopener">Ver sitio <span class="arr">↗</span></a>
+        <span class="proj-link muted">En producción · prueba piloto con nutricionistas</span>
       </div>
     </article>
 
@@ -583,46 +563,47 @@
         <dl class="proj-case">
           <div>
             <dt>Problema</dt>
-            <dd>La primera versión (Node, Express y MySQL) funcionaba, pero al relevar su seguridad encontré:
+            <dd>La primera versión (Node, Express y MySQL) funcionaba, pero al hacerle un relevamiento de seguridad aparecieron problemas de fondo:
               <ul>
-                <li>una API sin autenticación: cualquiera con la URL podía borrar usuarios o insumos;</li>
-                <li>contraseñas en texto plano, devueltas en la respuesta al crear usuarios;</li>
-                <li>credenciales de la base expuestas en los logs;</li>
-                <li>XSS almacenado por insertar datos de la base con innerHTML;</li>
-                <li>movimientos sin transacción que permitían stock negativo;</li>
-                <li>roles que no restringían nada.</li>
+                <li>la API no tenía autenticación;</li>
+                <li>las contraseñas se guardaban sin hash;</li>
+                <li>el stock podía quedar negativo;</li>
+                <li>los roles no restringían nada.</li>
               </ul>
+              Para un sistema que maneja el stock real de un laboratorio, parchearla no alcanzaba.
             </dd>
           </div>
           <div>
             <dt>Solución</dt>
-            <dd>Parchearla no alcanzaba, así que la reescribí desde cero con React (Vite) y Supabase, con la seguridad dentro de la base de datos y no solo en la interfaz. Está desplegada en Vercel y se usa a diario en una escuela técnica.</dd>
+            <dd>La reescribí desde cero con React y Supabase, con la seguridad dentro de la base de datos y no solo en la interfaz.</dd>
           </div>
         </dl>
         <div class="proj-detail">
           <div>
             <h4>Detalle técnico</h4>
             <ul>
-              <li>RLS y permisos por columna: cada rol lee y modifica solo lo que le corresponde.</li>
-              <li>Stock auditable: no se edita a mano, cambia solo con movimientos registrados e inmutables.</li>
-              <li>Edge Function para administrar usuarios, sin exponer credenciales de servicio en el cliente.</li>
-              <li>Informe del laboratorio exportable a Excel.</li>
+              <li>RLS y permisos por columna en PostgreSQL: cada rol (profesor / estudiante) lee y modifica solo lo que le corresponde.</li>
+              <li>Stock auditable: nunca se edita a mano; cambia solo a través de movimientos registrados (quién, cuándo, cuánto), que además son inmutables.</li>
+              <li>Edge Function para administrar usuarios, sin exponer credenciales de servicio en el navegador; cambio de contraseña obligatorio en el primer ingreso.</li>
+              <li>Informe del laboratorio exportable a Excel: lista de pedido por proveedor, cobertura estimada en días según el consumo, consumo mensual y stock inmovilizado.</li>
+              <li>Mobile-first: los estudiantes registran salidas desde el celular.</li>
+              <li>Deploy en Vercel.</li>
             </ul>
           </div>
           <div>
             <h4>81 tests de seguridad</h4>
             <ul>
-              <li>Script SQL propio que corre en Supabase y simula cuatro perfiles: anónimo, profesor, estudiante e inactivo.</li>
-              <li>Verifica que un anónimo no acceda a nada y que cada rol tenga solo sus permisos, también por columna.</li>
-              <li>Que el stock cambie solo por movimientos, nunca quede negativo y que los movimientos sean inmutables.</li>
-              <li>Que nadie firme por otro ni cargue fechas pasadas, que siempre quede un profesor activo y que las vistas respeten RLS.</li>
+              <li>Script SQL propio que simula cuatro perfiles: usuario anónimo, profesor, estudiante e inactivo.</li>
+              <li>Permisos por rol.</li>
+              <li>Stock nunca negativo y movimientos inmutables.</li>
+              <li>Que nadie pueda firmar por otro ni cargar fechas pasadas, y que siempre quede un profesor activo.</li>
             </ul>
           </div>
         </div>
         <div class="proj-tech">
-          <span class="chip key">React</span><span class="chip key">Supabase</span>
-          <span class="chip">Vite</span><span class="chip">PostgreSQL · RLS</span>
-          <span class="chip">Edge Functions</span><span class="chip">Tests SQL</span><span class="chip">Vercel</span>
+          <span class="chip key">React</span><span class="chip">Vite</span>
+          <span class="chip key">Supabase</span><span class="chip">PostgreSQL · RLS</span>
+          <span class="chip">Edge Functions</span><span class="chip">Vercel</span>
         </div>
       </div>
       <div class="proj-side">
@@ -634,31 +615,33 @@
     <article class="proj ru">
       <div class="proj-idx">03</div>
       <div>
-        <h3 class="proj-title">Rubí Aromas · Catálogo autogestionable</h3>
-        <p class="proj-desc">Catálogo web para una marca de velas y jabones artesanales, con panel de administración propio: la clienta agrega, edita y da de baja productos sin tocar una línea de código. Categorías, filtros, colecciones especiales e integración de pedidos por WhatsApp e Instagram.</p>
+        <h3 class="proj-title">Rubí Aromas · Catálogo + carrito con pedidos por WhatsApp</h3>
+        <p class="proj-desc">Sitio vitrina con carrito interactivo para una marca de velas y jabones artesanales de Arroyito. El cliente arma su pedido eligiendo aromas, colores y cantidades — incluyendo un configurador de combos paso a paso — y lo envía como ticket formateado por WhatsApp. La dueña administra el catálogo completo desde un panel propio sin tocar código.</p>
         <div class="proj-detail">
           <div>
             <h4>Responsabilidades</h4>
             <ul>
-              <li>Desarrollo full-stack: catálogo público + panel admin</li>
-              <li>CRUD de productos con login (Supabase Auth)</li>
-              <li>Carga de imágenes a Storage y seguridad con RLS</li>
-              <li>UI responsive con filtros por categoría</li>
+              <li>Rediseño completo mobile-first con tema oscuro (vanilla CSS, Fraunces + Outfit)</li>
+              <li>Panel admin con CRUD de velas, jabones, hornos y aromas (Supabase Auth + RLS)</li>
+              <li>Carrito con drawer, ticket a WhatsApp y campo de nombre del cliente</li>
+              <li>Configurador de combo interactivo (horno + wax melts + vela de regalo)</li>
+              <li>Suite de tests con Playwright (smoke, carrito, modal, admin)</li>
             </ul>
           </div>
           <div>
             <h4>Detalle</h4>
             <ul>
-              <li>Cliente real · marca de Arroyito</li>
-              <li>Autogestión total del catálogo por la clienta</li>
-              <li>+30 productos entre velas y jabones</li>
-              <li>Desplegado en Netlify</li>
+              <li>Cliente real · marca de Arroyito, Córdoba</li>
+              <li>Carrito con aroma a elección (select dinámico desde Supabase)</li>
+              <li>+30 productos entre velas, jabones y hornos</li>
+              <li>Desplegado en Netlify · admin en Supabase</li>
             </ul>
           </div>
         </div>
         <div class="proj-tech">
-          <span class="chip key">JavaScript</span><span class="chip key">Supabase</span>
-          <span class="chip">Auth · RLS</span><span class="chip">Storage</span><span class="chip">Netlify</span>
+          <span class="chip key">JavaScript</span><span class="chip key">Supabase Auth</span>
+          <span class="chip">RLS</span><span class="chip">Storage</span>
+          <span class="chip">Playwright</span><span class="chip">Netlify</span>
         </div>
       </div>
       <div class="proj-side">
