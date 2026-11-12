@@ -3,20 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agustín Rubiola — Full-Stack Developer</title>
+<title>Agustín Rubiola — Full-Stack Developer · IA aplicada</title>
+<meta name="description" content="Desarrollador full-stack en Arroyito, Córdoba. Aplicaciones web con React, Supabase y PostgreSQL, seguridad a nivel de base de datos e IA aplicada con Claude API.">
+<link rel="canonical" href="https://rubiola-agustin.github.io/">
+<meta name="theme-color" content="#101319">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Agustín Rubiola">
+<meta property="og:url" content="https://rubiola-agustin.github.io/">
+<meta property="og:title" content="Agustín Rubiola — Full-Stack Developer · IA aplicada">
+<meta property="og:description" content="Desarrollador full-stack en Arroyito, Córdoba. Aplicaciones web con React, Supabase y PostgreSQL, seguridad a nivel de base de datos e IA aplicada con Claude API.">
+<meta property="og:image" content="https://rubiola-agustin.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agustín Rubiola — Full-Stack Developer · IA aplicada. React, Supabase, PostgreSQL y Claude API.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agustín Rubiola — Full-Stack Developer · IA aplicada">
+<meta name="twitter:description" content="Desarrollador full-stack en Arroyito, Córdoba. Aplicaciones web con React, Supabase y PostgreSQL, seguridad a nivel de base de datos e IA aplicada con Claude API.">
+<meta name="twitter:image" content="https://rubiola-agustin.github.io/og.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Agustín Rubiola",
+  "url": "https://rubiola-agustin.github.io/",
+  "image": "https://rubiola-agustin.github.io/og.png",
+  "jobTitle": "Full-Stack Developer",
+  "email": "mailto:rubiolaagustin@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Arroyito",
+    "addressRegion": "Córdoba",
+    "addressCountry": "AR"
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "UTN Facultad Regional San Francisco" },
+    { "@type": "CollegeOrUniversity", "name": "UTN Facultad Regional Buenos Aires" }
+  ],
+  "knowsAbout": ["React", "Supabase", "PostgreSQL", "Row Level Security", "Edge Functions", "Claude API", "Magento 2"],
+  "sameAs": [
+    "https://linkedin.com/in/agustin-rubiola/",
+    "https://github.com/Rubiola-Agustin"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='7' fill='%23101319'/%3E%3Cpath d='M15.4 21 L11 28 L15.4 25.6 Z' fill='%23e54632'/%3E%3Cpath d='M16.6 21 L21 28 L16.6 25.6 Z' fill='%23e54632'/%3E%3Cpath d='M13.4 20 L16 29 L18.6 20 Z' fill='%23FFD166'/%3E%3Cpath d='M16 3.5 C19.4 7.8 20.4 13 20.4 18.5 C20.4 20 19.8 21 16 21 C12.2 21 11.6 20 11.6 18.5 C11.6 13 12.6 7.8 16 3.5 Z' fill='%23ff5e4d'/%3E%3Ccircle cx='16' cy='12.3' r='2.5' fill='%23101319'/%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
   :root{
     --ink:#101319;
     --ink-soft:#1b1f28;
     --paper:#f6f4ef;
     --paper-pure:#fbfaf7;
-    --coral:#ff5e4d;
-    --coral-deep:#e54632;
-    --grey:#7a8089;
+    --coral:#ff5e4d;        /* marca: fondos, bordes y texto sobre ink */
+    --coral-ink:#c4392a;    /* texto coral sobre paper (AA) y foco */
+    --grey:#646a73;         /* texto secundario sobre paper (AA) */
+    --grey-on-ink:#8a909a;  /* texto secundario sobre ink (AA) */
     --grey-line:#d9d6ce;
     --grey-line-dk:#2a2f3a;
     --r:2px;
@@ -25,10 +76,11 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: no-preference){
+    html{scroll-behavior:smooth}
+  }
   @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto}
-    *{animation:none !important;transition:none !important}
+    *,*::before,*::after{animation:none !important;transition:none !important}
   }
 
   body{
@@ -40,17 +92,23 @@
     overflow-x:hidden;
   }
 
-  ::selection{background:var(--coral);color:#fff}
+  ::selection{background:var(--coral);color:var(--ink)}
 
   a{color:inherit;text-decoration:none}
-  :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:var(--r)}
+  :focus-visible{outline:2px solid var(--coral-ink);outline-offset:3px;border-radius:var(--r)}
+  main:focus{outline:none}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .skip{
+    position:fixed;top:.75rem;left:.75rem;z-index:100;
+    background:var(--coral);color:var(--ink);
+    font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.82rem;
+    padding:.7rem 1rem;border-radius:var(--r);
+    transform:translateY(-200%);
+  }
+  .skip:focus{transform:none}
 
   .mono{font-family:"JetBrains Mono",monospace;font-weight:500}
-  .eyebrow{
-    font-family:"JetBrains Mono",monospace;
-    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--grey);font-weight:500;
-  }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
 
   /* ---------- NAV ---------- */
@@ -60,18 +118,43 @@
     padding:1.1rem var(--pad);
     mix-blend-mode:difference;color:#fff;
   }
-  .logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+  .logo{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
   .logo span{color:var(--coral)}
   .nav-links{display:flex;gap:1.6rem}
-  .nav-links a{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.04em;opacity:.85;transition:opacity .2s}
+  .nav-links a{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;letter-spacing:.04em;opacity:.85;transition:opacity .2s}
   .nav-links a:hover{opacity:1}
-  @media(max-width:720px){.nav-links{display:none}}
+  .menu-btn{display:none}
+  @media(max-width:720px){
+    .nav-links{display:none}
+    .js .menu-btn{
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;letter-spacing:.04em;
+      background:none;border:1px solid rgba(255,255,255,.6);color:inherit;
+      padding:.45rem .75rem;border-radius:var(--r);cursor:pointer;
+    }
+    .menu-btn .ico{display:inline-block;transition:transform .2s}
+    .menu-btn[aria-expanded="true"] .ico{transform:rotate(45deg)}
+  }
+  .menu-movil{
+    position:fixed;top:0;left:0;right:0;z-index:45;
+    background:var(--ink);border-bottom:1px solid var(--grey-line-dk);
+    padding:4.5rem var(--pad) 1.5rem;
+  }
+  .menu-movil[hidden]{display:none}
+  .menu-movil a{
+    display:block;padding:.9rem 0;border-bottom:1px solid var(--grey-line-dk);
+    font-family:"Bricolage Grotesque";font-weight:600;font-size:1.4rem;color:var(--paper);
+  }
+  .menu-movil a:last-child{border-bottom:none}
+  .menu-movil a:hover{color:var(--coral)}
+  .menu-movil a:focus-visible{outline-color:var(--coral)}
+  @media(min-width:721px){.menu-movil{display:none}}
 
   /* ---------- HERO (ink) ---------- */
   .hero{
     background:var(--ink);color:var(--paper);
     min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-    padding:8rem var(--pad) 3rem;position:relative;overflow:hidden;
+    padding:8rem var(--pad) 6rem;position:relative;overflow:hidden;
   }
   .hero-grid{
     position:absolute;inset:0;
@@ -82,20 +165,12 @@
   }
   .hero-inner{max-width:var(--maxw);margin:0 auto;width:100%;position:relative;z-index:2}
   .hero-meta{display:flex;align-items:center;gap:.7rem;margin-bottom:2.2rem}
-  .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.5);animation:pulse 2.4s infinite}
+  .dot{flex:none;width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.5)}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.45)}70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
   .hero-meta .mono{font-size:.78rem;color:#cfd3da;letter-spacing:.04em}
 
   .stack-statement{font-family:"Bricolage Grotesque";font-weight:700;line-height:.96;letter-spacing:-.03em}
-  .stack-statement .line{
-    display:block;font-size:clamp(2.6rem,9vw,6.8rem);
-    opacity:0;transform:translateY(28px);
-  }
-  .reveal-on .stack-statement .line{animation:rise .85s cubic-bezier(.2,.7,.2,1) forwards}
-  .reveal-on .stack-statement .line:nth-child(1){animation-delay:.05s}
-  .reveal-on .stack-statement .line:nth-child(2){animation-delay:.16s}
-  .reveal-on .stack-statement .line:nth-child(3){animation-delay:.27s}
-  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .stack-statement .line{display:block;font-size:clamp(2.6rem,9vw,6.8rem)}
   .stack-statement .layer-tag{
     font-family:"JetBrains Mono",monospace;font-weight:500;
     font-size:clamp(.6rem,1.4vw,.85rem);letter-spacing:.16em;
@@ -105,63 +180,71 @@
   }
   .stack-statement em{font-style:normal;color:var(--coral)}
 
-  .hero-sub{
-    margin-top:2.4rem;max-width:46ch;font-size:clamp(1rem,1.7vw,1.18rem);
-    color:#c3c8d0;opacity:0;animation:fade 1s ease .55s forwards;
-  }
-  .reveal-on .hero-sub{opacity:0}
-  @keyframes fade{to{opacity:1}}
-  .hero-cta{display:flex;gap:.9rem;margin-top:2.4rem;flex-wrap:wrap;opacity:0;animation:fade 1s ease .7s forwards}
+  .hero-sub{margin-top:2.4rem;max-width:52ch;font-size:clamp(1rem,1.7vw,1.18rem);color:#c3c8d0}
+  .hero-cta{display:flex;gap:.9rem;margin-top:2.4rem;flex-wrap:wrap}
   .btn{
     font-family:"JetBrains Mono",monospace;font-size:.82rem;font-weight:500;letter-spacing:.03em;
     padding:.85rem 1.4rem;border-radius:var(--r);transition:transform .18s,background .18s,color .18s;
     display:inline-flex;align-items:center;gap:.5rem;
   }
-  .btn-primary{background:var(--coral);color:#fff}
+  .btn-primary{background:var(--coral);color:var(--ink)}
   .btn-primary:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
   .btn-ghost{border:1px solid rgba(255,255,255,.25);color:var(--paper)}
   .btn-ghost:hover{border-color:var(--coral);color:var(--coral);transform:translateY(-2px)}
+  .hero .btn:focus-visible{outline-color:var(--coral)}
 
   .hero-foot{
     position:absolute;bottom:1.6rem;left:0;right:0;z-index:2;
-    display:flex;justify-content:space-between;align-items:flex-end;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
     padding:0 var(--pad);
   }
-  .hero-foot .mono{font-size:.7rem;color:#6c727c;letter-spacing:.08em}
-  .scrollcue{writing-mode:vertical-rl;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.25em;color:#6c727c;text-transform:uppercase}
+  .hero-foot .mono{font-size:.7rem;color:var(--grey-on-ink);letter-spacing:.08em}
+  .scrollcue{writing-mode:vertical-rl;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.66rem;letter-spacing:.25em;color:var(--grey-on-ink);text-transform:uppercase}
+
+  /* animaciones: solo como mejora, el contenido es visible sin ellas */
+  @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion: no-preference){
+    .dot{animation:pulse 2.4s infinite}
+    .stack-statement .line{animation:rise .85s cubic-bezier(.2,.7,.2,1) both}
+    .stack-statement .line:nth-child(1){animation-delay:.05s}
+    .stack-statement .line:nth-child(2){animation-delay:.16s}
+    .stack-statement .line:nth-child(3){animation-delay:.27s}
+    .hero-sub{animation:fade 1s ease .55s both}
+    .hero-cta{animation:fade 1s ease .7s both}
+
+    .js .ru{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .js .ru.in{opacity:1;transform:none}
+  }
 
   /* ---------- SECTION SHELL ---------- */
   section.block{padding:clamp(4.5rem,9vw,8rem) 0;position:relative}
   .sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
-  .sec-num{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--coral);font-weight:600}
+  .sec-num{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--coral-ink);font-weight:500}
   .sec-title{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.025em;line-height:1.04}
-
-  /* scroll reveal */
-  .ru{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-  .ru.in{opacity:1;transform:none}
 
   /* ---------- SIDE INDEX ---------- */
   .railnav{
     position:fixed;left:max(1rem,2vw);top:50%;transform:translateY(-50%);z-index:40;
     display:flex;flex-direction:column;gap:.85rem;
   }
-  .railnav a{display:flex;align-items:center;gap:.6rem;font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.08em;color:var(--grey);transition:color .2s}
+  .railnav a{display:flex;align-items:center;gap:.6rem;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.66rem;letter-spacing:.08em;color:var(--grey);transition:color .2s}
   .railnav .tick{width:18px;height:1px;background:var(--grey-line);transition:width .25s,background .25s}
   .railnav a:hover,.railnav a.active{color:var(--ink)}
   .railnav a.active .tick{width:34px;background:var(--coral)}
   .railnav a .lab{opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
-  .railnav a:hover .lab,.railnav a.active .lab{opacity:1;transform:none}
+  .railnav a:hover .lab,.railnav a.active .lab,.railnav a:focus-visible .lab{opacity:1;transform:none}
   @media(max-width:1100px){.railnav{display:none}}
 
   /* ---------- ABOUT ---------- */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
   @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
   .about-lead{font-family:"Bricolage Grotesque";font-weight:500;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.25;letter-spacing:-.015em}
-  .about-lead em{font-style:normal;color:var(--coral)}
+  .about-lead em{font-style:normal;color:var(--coral-ink)}
   .about-body p{color:#454a52;margin-top:1.1rem;max-width:60ch}
   .facts{border-top:1px solid var(--grey-line);margin-top:0}
   .fact{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--grey-line)}
-  .fact dt{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.08em;color:var(--grey);text-transform:uppercase}
+  .fact dt{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.72rem;letter-spacing:.08em;color:var(--grey);text-transform:uppercase}
   .fact dd{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.05rem;text-align:right}
   .fact dd small{display:block;font-family:"Hanken Grotesk";font-weight:400;font-size:.78rem;color:var(--grey)}
 
@@ -169,87 +252,143 @@
   .stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--grey-line);border:1px solid var(--grey-line)}
   .stack-cell{background:var(--paper-pure);padding:1.6rem 1.5rem;transition:background .25s}
   .stack-cell:hover{background:#fff}
-  .stack-cell h3{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:1rem;font-weight:600}
+  .stack-cell h3{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-ink);margin-bottom:1rem;font-weight:500}
   .chips{display:flex;flex-wrap:wrap;gap:.45rem}
   .chip{font-size:.82rem;color:#3a3f47;background:var(--paper);border:1px solid var(--grey-line);padding:.28rem .6rem;border-radius:var(--r)}
-  .chip.key{border-color:var(--coral);color:var(--coral-deep);font-weight:500}
+  .chip.key{border-color:var(--coral);color:var(--coral-ink);font-weight:500}
 
   /* ---------- PROJECTS ---------- */
   .proj{border-top:1px solid var(--ink);padding:2.6rem 0;display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1rem,4vw,3rem);align-items:start}
   @media(max-width:820px){.proj{grid-template-columns:1fr;gap:1.2rem}}
-  .proj-idx{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:.85rem;color:var(--coral);padding-top:.4rem}
+  .proj-idx{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.85rem;color:var(--coral-ink);padding-top:.4rem}
   .proj-title{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(1.5rem,3.2vw,2.3rem);letter-spacing:-.02em;line-height:1.05}
-  .proj-flag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--coral);padding:.2rem .5rem;border-radius:var(--r);vertical-align:middle;margin-left:.7rem;position:relative;top:-.35em}
+  .proj-flag{display:inline-block;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--coral);padding:.2rem .5rem;border-radius:var(--r);vertical-align:middle;margin-left:.7rem;position:relative;top:-.35em}
+  .proj-sub{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;letter-spacing:.02em;color:var(--grey);margin-top:.7rem}
   .proj-desc{color:#454a52;margin-top:.9rem;max-width:62ch}
   .proj-detail{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2.2rem;margin-top:1.5rem}
   @media(max-width:540px){.proj-detail{grid-template-columns:1fr}}
-  .proj-detail h4{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-bottom:.55rem}
-  .proj-detail ul{list-style:none}
-  .proj-detail li{position:relative;padding-left:1rem;font-size:.92rem;color:#3a3f47;margin-bottom:.3rem}
-  .proj-detail li::before{content:"›";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .proj-detail h4,.proj-block h4,.proj-case dt{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-bottom:.55rem}
+  .proj-detail ul,.proj-block ul{list-style:none}
+  .proj-detail li,.proj-block li,.proj-case li{position:relative;padding-left:1rem;font-size:.92rem;color:#3a3f47;margin-bottom:.3rem}
+  .proj-detail li::before,.proj-block li::before,.proj-case li::before{content:"›";position:absolute;left:0;color:var(--coral);font-weight:700}
+
+  /* problema → solución → detalle técnico */
+  .proj-case{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2.2rem;margin-top:1.4rem}
+  @media(max-width:640px){.proj-case{grid-template-columns:1fr}}
+  .proj-case dd{font-size:.95rem;color:#454a52;max-width:60ch}
+  .proj-case dd ul{list-style:none;margin-top:.5rem}
+  .proj-block{margin-top:1.6rem}
+  .proj-block ul.cols{columns:2 280px;column-gap:2.2rem}
+  .proj-block ul.cols li{break-inside:avoid}
+  .proj-block > p{font-size:.92rem;color:#454a52;margin-bottom:.7rem;max-width:62ch}
+
+  /* mini caso de IA */
+  .ai-case{margin-top:1.8rem;border:1px solid var(--grey-line-dk);border-radius:var(--r);padding:clamp(1.1rem,3vw,1.6rem)}
+  .ai-case > h4{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#c9b8ff;margin-bottom:1.1rem}
+  .ai-flows{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 2.2rem}
+  @media(max-width:640px){.ai-flows{grid-template-columns:1fr}}
+  .ai-flows h5{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.05rem;margin-bottom:.7rem}
+  .ai-flows ol{list-style:none;counter-reset:paso}
+  .ai-flows li{counter-increment:paso;position:relative;padding-left:1.9rem;font-size:.9rem;margin-bottom:.55rem}
+  .ai-flows li::before{content:counter(paso,decimal-leading-zero);position:absolute;left:0;top:.1em;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.7rem;color:#c9b8ff}
+  .ai-note{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--grey-line-dk);font-size:.88rem}
+
   .proj-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.4rem}
   .proj-tech .chip{background:transparent}
   .proj-side{display:flex;flex-direction:column;gap:.6rem;align-items:flex-end;min-width:130px}
   @media(max-width:820px){.proj-side{align-items:flex-start}}
-  .proj-link{font-family:"JetBrains Mono",monospace;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;border-bottom:1px solid transparent;transition:border-color .2s,color .2s;padding-bottom:2px}
-  .proj-link:hover{color:var(--coral-deep);border-color:var(--coral)}
+  .proj-link{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;display:inline-flex;align-items:center;gap:.4rem;border-bottom:1px solid transparent;transition:border-color .2s,color .2s;padding-bottom:2px}
+  .proj-link:hover{color:var(--coral-ink);border-color:var(--coral)}
   .proj-link.muted{color:var(--grey);cursor:default}
   .arr{transition:transform .2s}
   .proj-link:hover .arr{transform:translate(2px,-2px)}
 
   /* flagship inverted */
   .proj.flag{background:var(--ink);color:var(--paper);border:none;border-radius:var(--r);padding:clamp(1.8rem,4vw,2.8rem);margin-bottom:.5rem}
-  .proj.flag .proj-desc{color:#c3c8d0}
-  .proj.flag .proj-detail li{color:#d4d8de}
-  .proj.flag .proj-detail h4{color:#8990a0}
+  .proj.flag .proj-desc,.proj.flag .proj-case dd{color:#c3c8d0}
+  .proj.flag .proj-detail li,.proj.flag .proj-block li,.proj.flag .proj-case li,.proj.flag .ai-flows li,.proj.flag .ai-note{color:#d4d8de}
+  .proj.flag .proj-detail h4,.proj.flag .proj-block h4,.proj.flag .proj-case dt{color:var(--grey-on-ink)}
   .proj.flag .chip{border-color:var(--grey-line-dk);color:#cfd3da}
   .proj.flag .chip.key{border-color:var(--coral);color:#ff8475}
   .proj.flag .proj-idx{color:var(--coral)}
+  .proj.flag .proj-link.muted{color:var(--grey-on-ink)}
+  .proj.flag :focus-visible{outline-color:var(--coral)}
+
+  /* ---------- EXPERIENCE ---------- */
+  .job{border-top:1px solid var(--ink);padding-top:1.6rem;display:grid;grid-template-columns:minmax(180px,1fr) 2.4fr;gap:1rem clamp(1.5rem,4vw,3rem)}
+  @media(max-width:720px){.job{grid-template-columns:1fr}}
+  .job-when{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;letter-spacing:.04em;color:var(--grey);padding-top:.35rem}
+  .job h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(1.3rem,2.6vw,1.7rem);letter-spacing:-.02em;line-height:1.1}
+  .job-org{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;color:var(--coral-ink);margin-top:.45rem}
+  .job ul{list-style:none;margin-top:1.1rem}
+  .job li{position:relative;padding-left:1rem;color:#3a3f47;margin-bottom:.4rem;max-width:62ch}
+  .job li::before{content:"›";position:absolute;left:0;color:var(--coral);font-weight:700}
+  .job .proj-tech .chip{background:transparent}
 
   /* ---------- EDU ---------- */
-  .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
   .edu-card{border-top:2px solid var(--ink);padding-top:1.1rem}
-  .edu-card .tag{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.14em;color:var(--coral-deep);text-transform:uppercase}
-  .edu-card h3{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.2rem;margin:.5rem 0 .6rem;letter-spacing:-.01em}
+  .edu-card .tag{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.66rem;letter-spacing:.14em;color:var(--coral-ink);text-transform:uppercase}
+  .edu-card h3{font-family:"Bricolage Grotesque";font-weight:600;font-size:1.2rem;margin:.5rem 0 .25rem;letter-spacing:-.01em}
+  .edu-card .where{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.75rem;color:var(--grey);margin-bottom:.6rem}
   .edu-card p{font-size:.9rem;color:#52575f}
 
   /* ---------- CONTACT ---------- */
   .contact{background:var(--ink);color:var(--paper);padding:clamp(4.5rem,9vw,8rem) 0;margin-top:2rem}
   .contact .sec-title{color:var(--paper)}
+  .contact .sec-num{color:var(--coral)}
+  .contact :focus-visible{outline-color:var(--coral)}
   .contact-big{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(2.2rem,6vw,4.5rem);letter-spacing:-.03em;line-height:.98;margin-bottom:2.5rem}
   .contact-big em{font-style:normal;color:var(--coral)}
   .contact-rows{border-top:1px solid var(--grey-line-dk)}
   .crow{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--grey-line-dk);transition:padding .25s,color .2s;gap:1rem}
   .crow:hover{padding-left:1rem;color:var(--coral)}
-  .crow .clabel{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
-  .crow .cval{font-family:"Bricolage Grotesque";font-weight:600;font-size:clamp(1.05rem,2.4vw,1.5rem)}
+  .crow .clabel{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-on-ink)}
+  .crow .cval{font-family:"Bricolage Grotesque";font-weight:600;font-size:clamp(1.05rem,2.4vw,1.5rem);overflow-wrap:anywhere}
   .crow .arr{color:var(--coral)}
 
-  footer.foot{background:var(--ink);color:#6c727c;padding:2rem var(--pad);display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--grey-line-dk);flex-wrap:wrap;gap:1rem}
+  footer.foot{background:var(--ink);color:var(--grey-on-ink);padding:2rem var(--pad);display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--grey-line-dk);flex-wrap:wrap;gap:1rem}
   footer.foot .mono{font-size:.7rem;letter-spacing:.06em}
   footer.foot .logo{color:var(--paper)}
+  footer.foot :focus-visible{outline-color:var(--coral)}
 </style>
 </head>
 <body>
 
+<a class="skip" href="#main">Saltar al contenido</a>
+
 <header class="nav">
-  <a href="#top" class="logo">AR<span>.</span></a>
-  <nav class="nav-links">
+  <a href="#top" class="logo" aria-label="Agustín Rubiola, ir al inicio">AR<span>.</span></a>
+  <nav class="nav-links" aria-label="Principal">
     <a href="#about">sobre-mí</a>
     <a href="#stack">stack</a>
     <a href="#work">proyectos</a>
+    <a href="#exp">experiencia</a>
     <a href="#edu">formación</a>
     <a href="#contact">contacto</a>
   </nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil">menú <span class="ico" aria-hidden="true">+</span></button>
 </header>
 
-<nav class="railnav" aria-label="Índice">
+<nav class="menu-movil" id="menu-movil" aria-label="Menú" hidden>
+  <a href="#about">Sobre mí</a>
+  <a href="#stack">Stack</a>
+  <a href="#work">Proyectos</a>
+  <a href="#exp">Experiencia</a>
+  <a href="#edu">Formación</a>
+  <a href="#contact">Contacto</a>
+</nav>
+
+<nav class="railnav" aria-label="Índice de secciones">
   <a href="#about" data-rail="about"><span class="tick"></span><span class="lab">sobre-mí</span></a>
   <a href="#stack" data-rail="stack"><span class="tick"></span><span class="lab">stack</span></a>
   <a href="#work" data-rail="work"><span class="tick"></span><span class="lab">proyectos</span></a>
+  <a href="#exp" data-rail="exp"><span class="tick"></span><span class="lab">experiencia</span></a>
   <a href="#edu" data-rail="edu"><span class="tick"></span><span class="lab">formación</span></a>
   <a href="#contact" data-rail="contact"><span class="tick"></span><span class="lab">contacto</span></a>
 </nav>
+
+<main id="main" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -257,22 +396,22 @@
   <div class="hero-inner">
     <div class="hero-meta">
       <span class="dot"></span>
-      <span class="mono">DISPONIBLE PARA OPORTUNIDADES · AR / CÓRDOBA</span>
+      <span class="mono">DISPONIBLE PARA PROYECTOS Y OPORTUNIDADES · ARROYITO, CÓRDOBA, AR</span>
     </div>
     <h1 class="stack-statement">
       <span class="line"><span class="layer-tag">FE</span>Diseño la interfaz.</span>
       <span class="line"><span class="layer-tag">BE</span>Levanto el backend.</span>
       <span class="line"><span class="layer-tag">IA</span>Y le pongo <em>inteligencia</em>.</span>
     </h1>
-    <p class="hero-sub">Soy Agustín Rubiola. Construyo productos digitales completos —de la base de datos a la pantalla— con React, Supabase e IA aplicada. También hago frontend e-commerce sobre Magento 2.</p>
+    <p class="hero-sub">Soy Agustín Rubiola, desarrollador full-stack. Construyo aplicaciones web completas con React y Supabase —modelo de datos, seguridad, backend e interfaz— y aplico IA con Claude API donde resuelve un problema concreto.</p>
     <div class="hero-cta">
-      <a href="#work" class="btn btn-primary">Ver proyectos →</a>
+      <a href="#work" class="btn btn-primary">Ver proyectos <span aria-hidden="true">→</span></a>
       <a href="#contact" class="btn btn-ghost">Hablemos</a>
     </div>
   </div>
   <div class="hero-foot">
-    <span class="mono">FULL-STACK · REACT · SUPABASE · MAGENTO 2</span>
-    <span class="scrollcue">scroll ↓</span>
+    <span class="mono">FULL-STACK · IA APLICADA · REACT · SUPABASE · POSTGRESQL</span>
+    <span class="scrollcue" aria-hidden="true">scroll ↓</span>
   </div>
 </section>
 
@@ -285,19 +424,19 @@
     </div>
     <div class="about-grid">
       <div>
-        <p class="about-lead ru">Empecé sin saber programar y terminé poniendo un <em>SaaS multi-inquilino en producción</em>, hecho solo, de punta a punta.</p>
+        <p class="about-lead ru">Construyo sistemas web completos y me ocupo de <em>lo que no se ve</em>: quién puede leer cada fila, cómo queda registrado cada cambio y qué pasa cuando algo falla.</p>
         <div class="about-body ru">
-          <p>Soy Técnico Universitario en Programación, con una Diplomatura en Bases de Datos. Hoy trabajo full-stack: armo la arquitectura completa de un producto —modelo de datos, backend, API, frontend— y le integro IA cuando suma valor real.</p>
-          <p>Vengo del frontend e-commerce sobre Magento 2, donde personalizo themes y bloques para tiendas reales. Esa base, sumada a React, Supabase y PostgreSQL, me deja construir tanto la pieza visual como toda la lógica que la sostiene por detrás.</p>
-          <p>Me interesa el producto, no solo el código: entender el problema, proponer una solución y entregarla funcionando.</p>
+          <p>Soy Técnico Universitario en Programación (UTN San Francisco) y tengo una Diplomatura en Bases de Datos (UTN Buenos Aires). Trabajo como freelance desde Arroyito, Córdoba, en todo el producto: modelo de datos, políticas de seguridad en Postgres, Edge Functions e interfaz en React.</p>
+          <p>Mi sistema de inventario de laboratorio se usa en una escuela técnica. Lo reescribí desde cero después de relevar la seguridad de la primera versión, y hoy lo respaldan 81 tests de seguridad. En NutriApp, que está en desarrollo, integro Claude API para analizar fotos de comidas y estudios de bioimpedancia.</p>
+          <p>En paralelo hago el maquetado frontend de tiendas Magento 2 del ecosistema XCONS.</p>
         </div>
       </div>
       <dl class="facts ru">
-        <div class="fact"><dt>Producción</dt><dd>1 SaaS<small>multi-tenant, en vivo</small></dd></div>
-        <div class="fact"><dt>E-commerce</dt><dd>3 tiendas<small>Magento 2 · frontend</small></dd></div>
-        <div class="fact"><dt>Foco</dt><dd>Full-stack<small>React · Supabase · IA</small></dd></div>
-        <div class="fact"><dt>Base</dt><dd>Datos<small>SQL · modelado relacional</small></dd></div>
-        <div class="fact"><dt>Ubicación</dt><dd>Argentina<small>remoto / freelance</small></dd></div>
+        <div class="fact"><dt>En uso</dt><dd>2 sistemas<small>Inventario Lab v2 · Rubí Aromas</small></dd></div>
+        <div class="fact"><dt>Seguridad</dt><dd>81 tests<small>RLS y permisos por columna</small></dd></div>
+        <div class="fact"><dt>E-commerce</dt><dd>3 tiendas<small>Magento 2 · freelance</small></dd></div>
+        <div class="fact"><dt>Foco</dt><dd>Full-stack<small>IA aplicada con Claude API</small></dd></div>
+        <div class="fact"><dt>Base</dt><dd>Arroyito, Córdoba<small>remoto / freelance</small></dd></div>
       </dl>
     </div>
   </div>
@@ -314,39 +453,49 @@
       <div class="stack-cell">
         <h3>Frontend</h3>
         <div class="chips">
-          <span class="chip key">React</span><span class="chip key">Vite</span>
+          <span class="chip key">React 19</span><span class="chip key">Vite</span>
           <span class="chip">JavaScript</span><span class="chip">HTML5</span>
           <span class="chip">CSS3</span><span class="chip">SCSS</span>
-          <span class="chip">Responsive</span><span class="chip">UI/UX</span>
+          <span class="chip">Responsive</span><span class="chip">Web Push</span>
         </div>
       </div>
       <div class="stack-cell">
-        <h3>Backend &amp; DB</h3>
+        <h3>Backend &amp; datos</h3>
         <div class="chips">
           <span class="chip key">Supabase</span><span class="chip key">PostgreSQL</span>
-          <span class="chip">Node.js</span><span class="chip">Express</span>
-          <span class="chip">MySQL</span><span class="chip">RLS</span>
+          <span class="chip">RLS</span><span class="chip">Auth</span>
+          <span class="chip">Storage</span><span class="chip">Realtime</span>
+          <span class="chip">pg_cron</span><span class="chip">Node.js</span>
+          <span class="chip">Express</span><span class="chip">MySQL</span>
           <span class="chip">REST APIs</span>
         </div>
       </div>
       <div class="stack-cell">
-        <h3>IA &amp; Serverless</h3>
+        <h3>IA aplicada</h3>
         <div class="chips">
-          <span class="chip key">Claude API</span><span class="chip key">Edge Functions</span>
-          <span class="chip">Deno</span><span class="chip">Prompt Engineering</span>
+          <span class="chip key">Claude API</span><span class="chip key">Edge Functions (Deno)</span>
+          <span class="chip">Visión: fotos y estudios</span><span class="chip">Salida JSON validada</span>
+          <span class="chip">Prompt engineering</span>
+        </div>
+      </div>
+      <div class="stack-cell">
+        <h3>Calidad &amp; deploy</h3>
+        <div class="chips">
+          <span class="chip key">Tests de seguridad en SQL</span>
+          <span class="chip">Vercel</span><span class="chip">Netlify</span>
+          <span class="chip">Git</span><span class="chip">GitHub</span>
         </div>
       </div>
       <div class="stack-cell">
         <h3>E-commerce</h3>
         <div class="chips">
-          <span class="chip key">Magento 2</span><span class="chip">Theme Customization</span>
-          <span class="chip">Layout XML</span><span class="chip">CMS Blocks</span>
+          <span class="chip key">Magento 2</span><span class="chip">Layout XML</span>
+          <span class="chip">CMS Blocks</span>
         </div>
       </div>
       <div class="stack-cell">
         <h3>Herramientas</h3>
         <div class="chips">
-          <span class="chip">Git</span><span class="chip">GitHub</span>
           <span class="chip">VS Code</span><span class="chip">Figma</span>
           <span class="chip">Claude Code</span>
         </div>
@@ -360,7 +509,7 @@
   <div class="wrap">
     <div class="sec-head ru">
       <span class="sec-num">03</span>
-      <h2 class="sec-title">Trabajo destacado</h2>
+      <h2 class="sec-title">Proyectos</h2>
     </div>
 
     <!-- flagship -->
@@ -368,35 +517,40 @@
       <div class="proj-idx">01</div>
       <div>
         <h3 class="proj-title">NutriApp<span class="proj-flag">Proyecto estrella</span></h3>
-        <p class="proj-desc">Plataforma SaaS multi-inquilino para nutricionistas y sus pacientes: agenda, fichas clínicas, análisis de comidas por foto con IA y seguimiento de bioimpedancia. Cada profesional opera con sus datos aislados del resto.</p>
+        <p class="proj-desc">Plataforma SaaS multi-inquilino para nutricionistas y sus pacientes, en producción en dominio propio. Agenda, fichas clínicas, planes, análisis de comidas por foto con IA y seguimiento de bioimpedancia, con una app para la nutri y otra para el paciente, pensadas primero para el celular. Cada profesional opera con sus datos aislados del resto.</p>
         <div class="proj-detail">
           <div>
             <h4>Responsabilidades</h4>
             <ul>
-              <li>Arquitectura full-stack desde cero</li>
-              <li>Modelo de datos multi-tenant con RLS</li>
-              <li>Integración de IA vía Edge Functions</li>
-              <li>Auth, storage y dashboards duales</li>
+              <li>Arquitectura full-stack y modelo de datos multi-tenant con RLS</li>
+              <li>IA vía Edge Functions: análisis de comidas y de bioimpedancia</li>
+              <li>Notificaciones en tiempo real, push en el celular y recordatorios programados (pg_cron)</li>
+              <li>Rediseño completo mobile-first, instalable como app (PWA)</li>
+              <li>Auth completa: invitaciones, Google, recuperación por mail con dominio y SMTP propios</li>
+              <li>Panel de administración con registro de auditoría</li>
             </ul>
           </div>
           <div>
             <h4>Desafíos</h4>
             <ul>
-              <li>Aislamiento de datos entre inquilinos</li>
-              <li>Seguridad a nivel de fila (Postgres)</li>
-              <li>Prompts para análisis clínico</li>
-              <li>UX nutricionista + paciente</li>
+              <li>Aislamiento de datos entre inquilinos y permisos por columna en Postgres</li>
+              <li>Funciones seguras del lado del servidor en vez de permisos al cliente</li>
+              <li>Accesibilidad: contraste, áreas táctiles, movimiento reducido</li>
+              <li>Pruebas automatizadas con un simulador de la app (Playwright)</li>
+              <li>UX distinta para nutricionista y paciente</li>
             </ul>
           </div>
         </div>
         <div class="proj-tech">
-          <span class="chip key">React</span><span class="chip key">Supabase</span>
-          <span class="chip">Vite</span><span class="chip">PostgreSQL</span>
-          <span class="chip">Claude API</span><span class="chip">Deno</span>
+          <span class="chip key">React</span><span class="chip">Vite</span>
+          <span class="chip key">Supabase</span><span class="chip">PostgreSQL</span>
+          <span class="chip">Deno</span><span class="chip">Claude API</span>
+          <span class="chip">PWA · Web Push</span><span class="chip">Playwright</span>
         </div>
       </div>
       <div class="proj-side">
-        <span class="proj-link muted">En desarrollo activo</span>
+        <a class="proj-link" href="https://app.minutriapp.com.ar" target="_blank" rel="noopener">Ver sitio <span class="arr">↗</span></a>
+        <span class="proj-link muted">En producción · prueba piloto con nutricionistas</span>
       </div>
     </article>
 
@@ -404,35 +558,56 @@
     <article class="proj ru">
       <div class="proj-idx">02</div>
       <div>
-        <h3 class="proj-title">Sistema de Gestión de Laboratorio</h3>
-        <p class="proj-desc">Aplicación web para el control de insumos químicos e instrumentos de laboratorio: autenticación, control de stock, movimientos y gestión de usuarios.</p>
+        <h3 class="proj-title">Inventario Lab v2</h3>
+        <p class="proj-sub">Inventario de insumos e instrumentos de laboratorio · en uso en una escuela técnica</p>
+        <dl class="proj-case">
+          <div>
+            <dt>Problema</dt>
+            <dd>La primera versión (Node, Express y MySQL) funcionaba, pero al hacerle un relevamiento de seguridad aparecieron problemas de fondo:
+              <ul>
+                <li>la API no tenía autenticación;</li>
+                <li>las contraseñas se guardaban sin hash;</li>
+                <li>el stock podía quedar negativo;</li>
+                <li>los roles no restringían nada.</li>
+              </ul>
+              Para un sistema que maneja el stock real de un laboratorio, parchearla no alcanzaba.
+            </dd>
+          </div>
+          <div>
+            <dt>Solución</dt>
+            <dd>La reescribí desde cero con React y Supabase, con la seguridad dentro de la base de datos y no solo en la interfaz.</dd>
+          </div>
+        </dl>
         <div class="proj-detail">
           <div>
-            <h4>Responsabilidades</h4>
+            <h4>Detalle técnico</h4>
             <ul>
-              <li>Diseño de base de datos relacional</li>
-              <li>Backend con Node.js y Express</li>
-              <li>API REST completa + CRUD</li>
-              <li>Interfaz responsive HTML/CSS/JS</li>
+              <li>RLS y permisos por columna en PostgreSQL: cada rol (profesor / estudiante) lee y modifica solo lo que le corresponde.</li>
+              <li>Stock auditable: nunca se edita a mano; cambia solo a través de movimientos registrados (quién, cuándo, cuánto), que además son inmutables.</li>
+              <li>Edge Function para administrar usuarios, sin exponer credenciales de servicio en el navegador; cambio de contraseña obligatorio en el primer ingreso.</li>
+              <li>Informe del laboratorio exportable a Excel: lista de pedido por proveedor, cobertura estimada en días según el consumo, consumo mensual y stock inmovilizado.</li>
+              <li>Mobile-first: los estudiantes registran salidas desde el celular.</li>
+              <li>Deploy en Vercel.</li>
             </ul>
           </div>
           <div>
-            <h4>Desafíos</h4>
+            <h4>81 tests de seguridad</h4>
             <ul>
-              <li>Modelado relacional complejo</li>
-              <li>Integridad de datos</li>
-              <li>Sesiones y autenticación segura</li>
-              <li>Validaciones full-stack</li>
+              <li>Script SQL propio que simula cuatro perfiles: usuario anónimo, profesor, estudiante e inactivo.</li>
+              <li>Permisos por rol.</li>
+              <li>Stock nunca negativo y movimientos inmutables.</li>
+              <li>Que nadie pueda firmar por otro ni cargar fechas pasadas, y que siempre quede un profesor activo.</li>
             </ul>
           </div>
         </div>
         <div class="proj-tech">
-          <span class="chip">Node.js</span><span class="chip">Express</span>
-          <span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">CSS</span>
+          <span class="chip key">React</span><span class="chip">Vite</span>
+          <span class="chip key">Supabase</span><span class="chip">PostgreSQL · RLS</span>
+          <span class="chip">Edge Functions</span><span class="chip">Vercel</span>
         </div>
       </div>
       <div class="proj-side">
-        <a class="proj-link" href="https://midnightblue-dunlin-135431.hostingersite.com/" target="_blank" rel="noopener">Ver sitio <span class="arr">↗</span></a>
+        <a class="proj-link" href="https://github.com/Rubiola-Agustin/inventario-lab" target="_blank" rel="noopener">Ver repo <span class="arr" aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a>
       </div>
     </article>
 
@@ -440,71 +615,62 @@
     <article class="proj ru">
       <div class="proj-idx">03</div>
       <div>
-        <h3 class="proj-title">Frontend e-commerce · Magento 2</h3>
-        <p class="proj-desc">Personalización de tiendas en producción vía CMS blocks: maquetado de homepage, sliders responsive, ajustes de UI mobile y optimización visual para Click Materiales, Disensa y Hierros Maldonado.</p>
+        <h3 class="proj-title">Rubí Aromas · Catálogo + carrito con pedidos por WhatsApp</h3>
+        <p class="proj-desc">Sitio vitrina con carrito interactivo para una marca de velas y jabones artesanales de Arroyito. El cliente arma su pedido eligiendo aromas, colores y cantidades — incluyendo un configurador de combos paso a paso — y lo envía como ticket formateado por WhatsApp. La dueña administra el catálogo completo desde un panel propio sin tocar código.</p>
         <div class="proj-detail">
           <div>
             <h4>Responsabilidades</h4>
             <ul>
-              <li>Maquetado de bloques de home</li>
-              <li>Sliders y componentes responsive</li>
-              <li>Fixes de UI y CSS en mobile</li>
-              <li>Optimización visual de tienda</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contexto</h4>
-            <ul>
-              <li>Trabajo sobre tiendas en vivo</li>
-              <li>Edición vía CMS / HTML + CSS</li>
-              <li>Múltiples marcas del ecosistema</li>
-              <li>Foco en performance visual</li>
-            </ul>
-          </div>
-        </div>
-        <div class="proj-tech">
-          <span class="chip">Magento 2</span><span class="chip">SCSS</span>
-          <span class="chip">Layout XML</span><span class="chip">JavaScript</span>
-        </div>
-      </div>
-      <div class="proj-side">
-        <span class="proj-link muted">Tiendas privadas</span>
-      </div>
-    </article>
-
-    <!-- 04 -->
-    <article class="proj ru">
-      <div class="proj-idx">04</div>
-      <div>
-        <h3 class="proj-title">Rubí Aromas · Catálogo autogestionable</h3>
-        <p class="proj-desc">Catálogo web para una marca de velas y jabones artesanales, con panel de administración propio: la clienta agrega, edita y da de baja productos sin tocar una línea de código. Categorías, filtros, colecciones especiales e integración de pedidos por WhatsApp e Instagram.</p>
-        <div class="proj-detail">
-          <div>
-            <h4>Responsabilidades</h4>
-            <ul>
-              <li>Desarrollo full-stack: catálogo público + panel admin</li>
-              <li>CRUD de productos con login (Supabase Auth)</li>
-              <li>Carga de imágenes a Storage y seguridad con RLS</li>
-              <li>UI responsive con filtros por categoría</li>
+              <li>Rediseño completo mobile-first con tema oscuro (vanilla CSS, Fraunces + Outfit)</li>
+              <li>Panel admin con CRUD de velas, jabones, hornos y aromas (Supabase Auth + RLS)</li>
+              <li>Carrito con drawer, ticket a WhatsApp y campo de nombre del cliente</li>
+              <li>Configurador de combo interactivo (horno + wax melts + vela de regalo)</li>
+              <li>Suite de tests con Playwright (smoke, carrito, modal, admin)</li>
             </ul>
           </div>
           <div>
             <h4>Detalle</h4>
             <ul>
-              <li>Cliente real · marca de Arroyito</li>
-              <li>Autogestión total del catálogo por la clienta</li>
-              <li>+30 productos entre velas y jabones</li>
-              <li>Desplegado en Netlify</li>
+              <li>Cliente real · marca de Arroyito, Córdoba</li>
+              <li>Carrito con aroma a elección (select dinámico desde Supabase)</li>
+              <li>+30 productos entre velas, jabones y hornos</li>
+              <li>Desplegado en Netlify · admin en Supabase</li>
             </ul>
           </div>
         </div>
         <div class="proj-tech">
-          <span class="chip key">JavaScript</span><span class="chip key">Supabase</span>
-          <span class="chip">Auth · RLS</span><span class="chip">Storage</span><span class="chip">Netlify</span>
+          <span class="chip key">JavaScript</span><span class="chip key">Supabase Auth</span>
+          <span class="chip">RLS</span><span class="chip">Storage</span>
+          <span class="chip">Playwright</span><span class="chip">Netlify</span>
         </div>
       </div>
       <div class="proj-side">
-        <a class="proj-link" href="https://catalogo-rubiaromas.netlify.app/" target="_blank" rel="noopener">Ver sitio <span class="arr">↗</span></a>
+        <a class="proj-link" href="https://catalogo-rubiaromas.netlify.app/" target="_blank" rel="noopener">Ver sitio <span class="arr" aria-hidden="true">↗</span><span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="block" id="exp">
+  <div class="wrap">
+    <div class="sec-head ru">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Experiencia</h2>
+    </div>
+    <article class="job ru">
+      <p class="job-when">2025 — actualidad</p>
+      <div>
+        <h3>Frontend Developer · Freelance</h3>
+        <p class="job-org">Ecosistema XCONS · Magento 2</p>
+        <ul>
+          <li>Maquetado frontend de tiendas Magento 2 en producción: bloques CMS de home, sliders y componentes responsive.</li>
+          <li>Ajustes de UI y CSS mobile sobre themes de Magento 2 con Layout XML y SCSS.</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="chip">Magento 2</span><span class="chip">SCSS</span>
+          <span class="chip">Layout XML</span><span class="chip">JavaScript</span><span class="chip">CMS Blocks</span>
+        </div>
       </div>
     </article>
   </div>
@@ -514,24 +680,21 @@
 <section class="block" id="edu">
   <div class="wrap">
     <div class="sec-head ru">
-      <span class="sec-num">04</span>
+      <span class="sec-num">05</span>
       <h2 class="sec-title">Formación</h2>
     </div>
     <div class="edu ru">
       <div class="edu-card">
         <span class="tag">Universidad</span>
         <h3>Técnico Universitario en Programación</h3>
-        <p>Desarrollo de software, estructuras de datos, algoritmos, bases de datos y lógica de programación. Base académica para proyectos reales.</p>
+        <p class="where">UTN San Francisco · 2025</p>
+        <p>Programación, estructuras de datos, algoritmos, bases de datos y metodologías de desarrollo.</p>
       </div>
       <div class="edu-card">
         <span class="tag">Diplomatura</span>
         <h3>Bases de Datos</h3>
-        <p>Modelado relacional, diseño de esquemas, consultas SQL avanzadas y optimización de performance. Clave para colaborar con backend.</p>
-      </div>
-      <div class="edu-card">
-        <span class="tag">Continuo</span>
-        <h3>Autodidacta · IA y producto</h3>
-        <p>Formación constante en React, Supabase, integración de IA, arquitectura frontend y buenas prácticas de ingeniería de software.</p>
+        <p class="where">UTN Buenos Aires · 2025</p>
+        <p>Modelado relacional, diseño de esquemas, SQL avanzado y optimización de consultas.</p>
       </div>
     </div>
   </div>
@@ -541,54 +704,72 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="sec-head ru">
-      <span class="sec-num">05</span>
-      <h2 class="sec-title" style="color:var(--paper)">Contacto</h2>
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">Contacto</h2>
     </div>
     <p class="contact-big ru">¿Construimos<br>algo <em>juntos</em>?</p>
     <div class="contact-rows ru">
-      <a class="crow" href="mailto:rubiolaagustin@gmail.com?subject=Contacto desde tu portfolio">
-        <span class="clabel">Email</span><span class="cval">rubiolaagustin@gmail.com</span><span class="arr">→</span>
+      <a class="crow" href="mailto:rubiolaagustin@gmail.com?subject=Contacto%20desde%20tu%20portfolio">
+        <span class="clabel">Email</span><span class="cval">rubiolaagustin@gmail.com</span><span class="arr" aria-hidden="true">→</span>
       </a>
       <a class="crow" href="https://linkedin.com/in/agustin-rubiola/" target="_blank" rel="noopener">
-        <span class="clabel">LinkedIn</span><span class="cval">agustin-rubiola</span><span class="arr">↗</span>
+        <span class="clabel">LinkedIn</span><span class="cval">agustin-rubiola<span class="sr-only"> (se abre en una pestaña nueva)</span></span><span class="arr" aria-hidden="true">↗</span>
       </a>
       <a class="crow" href="https://github.com/Rubiola-Agustin" target="_blank" rel="noopener">
-        <span class="clabel">GitHub</span><span class="cval">Rubiola-Agustin</span><span class="arr">↗</span>
+        <span class="clabel">GitHub</span><span class="cval">Rubiola-Agustin<span class="sr-only"> (se abre en una pestaña nueva)</span></span><span class="arr" aria-hidden="true">↗</span>
       </a>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer class="foot">
-  <a href="#top" class="logo">AR<span style="color:var(--coral)">.</span></a>
-  <span class="mono">© 2026 AGUSTÍN RUBIOLA · DISEÑADO &amp; DESARROLLADO ♥</span>
+  <a href="#top" class="logo" aria-label="Volver al inicio">AR<span>.</span></a>
+  <span class="mono">© 2026 AGUSTÍN RUBIOLA · ARROYITO, CÓRDOBA · HECHO A MANO EN HTML Y CSS, SIN FRAMEWORKS</span>
 </footer>
 
 <script>
-  // hero reveal
-  document.querySelector('.hero').classList.add('reveal-on');
+  // scroll reveal (solo mejora: sin JS o sin IntersectionObserver el contenido ya es visible)
+  const reveal = document.querySelectorAll('.ru');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
+    reveal.forEach(el=>io.observe(el));
 
-  // scroll reveal
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.14, rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.ru').forEach(el=>io.observe(el));
-
-  // rail active state
-  const rail = document.querySelectorAll('.railnav a');
-  const map = {};
-  rail.forEach(a=>map[a.dataset.rail]=a);
-  const secObs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        rail.forEach(a=>a.classList.remove('active'));
-        const id=e.target.id; if(map[id]) map[id].classList.add('active');
-      }
+    // rail active state
+    const rail = document.querySelectorAll('.railnav a');
+    const map = {};
+    rail.forEach(a=>map[a.dataset.rail]=a);
+    const secObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          rail.forEach(a=>a.classList.remove('active'));
+          map[e.target.id].classList.add('active');
+        }
+      });
+    },{threshold:.3});
+    Object.keys(map).forEach(id=>{
+      const el=document.getElementById(id); if(el) secObs.observe(el);
     });
-  },{threshold:.3});
-  ['about','stack','work','edu','contact'].forEach(id=>{
-    const el=document.getElementById(id); if(el) secObs.observe(el);
+  } else {
+    reveal.forEach(el=>el.classList.add('in'));
+  }
+
+  // menú móvil
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('menu-movil');
+  const setMenu = (open)=>{ menu.hidden = !open; menuBtn.setAttribute('aria-expanded', open); };
+  menuBtn.addEventListener('click', ()=>setMenu(menu.hidden));
+  menu.addEventListener('click', e=>{ if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', e=>{
+    if(e.key==='Escape' && !menu.hidden){ setMenu(false); menuBtn.focus(); }
   });
+  document.addEventListener('focusin', e=>{
+    if(!menu.hidden && !menu.contains(e.target) && e.target!==menuBtn) setMenu(false);
+  });
+  matchMedia('(min-width:721px)').addEventListener('change', e=>{ if(e.matches) setMenu(false); });
 </script>
 </body>
 </html>
